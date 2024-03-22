@@ -1,6 +1,8 @@
 Beyla Demo
 ----------
 
+## Demo Applications
+
 Create a Kubernetes cluster
 
 ```
@@ -23,4 +25,26 @@ Generate load
 
 ```
 ./loadgen.sh
+```
+
+## Monitoring Backend
+
+Install the monitoring backend
+
+```
+kubectl apply -f monitoring-backend.yaml
+```
+
+Port forward the Grafan UI
+
+```
+kubectl port-forward services/otel-lgtm 3000:3000
+```
+
+Use a Web browser to log in on [http://localhost:3000](http://localhost:3000), user _admin_ password _admin_.
+
+## Beyla
+
+```
+kubectl apply -f beyla.yaml
 ```
