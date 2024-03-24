@@ -149,3 +149,9 @@ data:
         submit: ["metrics","traces"]
     routes:
       unmatched: heuristic
+      patterns:
+      - /user/{id}
+      - /user/{id}/basket/{product}
+      - /product/*
+      ignored_patterns:
+      - /health
